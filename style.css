@@ -1,0 +1,454 @@
+:root { 
+    --warna-utama: #5f7a61;      
+    --warna-aksen: #c9a96e;      
+    --warna-latar: #fbf8f3;
+    --warna-latar-2: #eef2ea;
+    --warna-teks: #2f3a30;
+    --warna-kartu: #ffffff;
+}
+
+* { 
+    box-sizing: border-box;      
+}
+
+html { 
+    font-size: 16px;             
+    scroll-behavior: smooth; 
+}
+
+body { 
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+    color: var(--warna-teks);
+    background-color: var(--warna-latar);
+    transition: background-color 0.4s ease, color 0.4s ease; 
+}
+
+h1, h2, h3 {                
+    font-weight: normal;
+    text-align: center;
+}
+
+h2 { 
+    font-size: 2rem;
+    color: var(--warna-utama);
+    margin-bottom: 1.5rem;
+}
+
+h2::after { 
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    margin: 0.6rem auto 0;
+    background: var(--warna-aksen);
+}
+
+a { 
+    color: var(--warna-utama);
+    text-decoration: none;
+}
+
+a:hover { 
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.cover { 
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(160deg, #3f5a42, #7f9a82 60%, #c9a96e);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.cover.terbuka { 
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cover-kecil { 
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.cover-nama,
+.hero-nama {
+    font-size: clamp(2.5rem, 9vw, 5rem);
+    margin: 0.5rem 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cover-nama span, 
+.hero-nama span { 
+    color: var(--warna-aksen);
+    font-style: italic;
+}
+
+#namaTamu { 
+    color: #fff;
+    margin: 0 0 1.5rem;
+}
+
+.cover .input-cover {
+    width: min(90%, 320px);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tombol {
+    padding: 0.7em 1.8em;
+    border: 2px solid var(--warna-aksen);
+    border-radius: 50px;
+    background: var(--warna-aksen);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tombol:hover {
+    background: var(--warna-utama);
+    border-color: var(--warna-utama);
+    transform: scale(1.08);
+}
+
+.tombol-outline {
+    background: transparent;
+    color: var(--warna-utama);
+    border-color: var(--warna-utama);
+}
+
+.tombol-kecil {
+    padding: 0.4em 1em;
+    border: 1px solid var(--warna-utama);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--warna-utama);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tombol-kecil:hover {
+    background: var(--warna-utama);
+    color: #fff;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    background: var(--warna-kartu);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a:hover {
+    color: var(--warna-aksen);
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 90dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #fff;
+    background:
+        linear-gradient(rgba(40, 55, 42, 0.65), rgba(40, 55, 42, 0.65)),
+        url("https://placehold.co/1200x800/5f7a61/5f7a61") center / cover no-repeat;
+}
+
+.hero-tanggal {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.bagian {
+    padding: 4rem 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.bagian-gelap {
+    max-width: none;
+    background: var(--warna-latar-2);
+}
+
+.bagian-gelap > * {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kutipan {
+    max-width: 65ch;
+    margin: 0 auto 2rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.kutipan cite {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--warna-utama);
+}
+
+.grid-mempelai {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figure img {
+    margin: 0 auto 1rem;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--warna-aksen);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+}
+
+figure img:hover {
+    transform: scale(1.06) rotate(3deg);
+}
+
+figcaption::first-line {
+    color: var(--warna-utama);
+    font-size: 1.2rem;
+}
+
+.kisah {
+    max-width: 65ch;
+    margin: 0 auto;
+}
+
+.kisah dt {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--warna-utama);
+}
+
+.kisah dd {
+    margin: 0.2rem 0 0 1.2rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--warna-aksen);
+}
+
+.tabel-wrap {
+    overflow: auto;             
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--warna-kartu);
+    border-radius: 10px;
+}
+
+caption {
+    padding: 0.8rem;
+    font-weight: bold;
+    color: var(--warna-utama);
+}
+
+th, td {
+    padding: 0.8rem;
+    border: 1px solid var(--warna-aksen);
+    text-align: center;
+}
+
+thead th {
+    background: var(--warna-utama);
+    color: #fff;
+}
+
+tfoot td {
+    font-style: italic;
+}
+
+details {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border: 1px dashed var(--warna-utama);
+    border-radius: 8px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+mark {
+    background: var(--warna-aksen);
+    color: #222;
+    padding: 0 0.3em;
+}
+
+.peta {
+    width: 100%;
+    height: 50vh;
+    border: 0;
+    border-radius: 12px;
+}
+
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+}
+
+.galeri img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.galeri img:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+  
+.no-rek {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    color: var(--warna-utama);
+}
+
+.rekening {
+    text-align: center;
+}
+
+fieldset {
+    border: 1px solid var(--warna-aksen);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+legend {
+    color: var(--warna-utama);
+    padding: 0 0.5rem;
+}
+
+form {
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.6em 0.8em;
+    border: 1px solid var(--warna-utama);
+    border-radius: 6px;
+    font: inherit;
+    color: var(--warna-teks);
+    background: var(--warna-kartu);
+}
+
+input.salah,
+textarea.salah {                
+    border-color: #d33;
+    background: #fdeaea;
+}
+
+.daftar-ucapan {
+    max-width: 520px;
+    max-height: 360px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.ucapan {
+    margin-bottom: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: var(--warna-kartu);
+    border-left: 4px solid var(--warna-aksen);
+    border-radius: 6px;
+}
+
+.ucapan small {
+    color: var(--warna-utama);
+}
+
+footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #fff;
+    background: var(--warna-utama);
+}
+
+.btn-musik {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 60;
+    padding: 0.7em 1em;
+    border: 0;
+    border-radius: 50px;
+    background: var(--warna-aksen);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-musik.main {
+    animation: berputar 3s linear infinite;
+}
+
+@keyframes berputar {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
